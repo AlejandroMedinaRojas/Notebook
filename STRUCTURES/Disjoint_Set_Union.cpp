@@ -1,8 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-// Time complexity O(1)
-// Space complexity O(n)
 template<typename T>
 struct DSU {
 
@@ -29,3 +24,7 @@ struct DSU {
         return -dsu[Find(u)];
     }
 };
+
+// DSU
+// Time complexity O(1)
+// Space complexity O(n)

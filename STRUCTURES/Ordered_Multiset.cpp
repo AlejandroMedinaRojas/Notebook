@@ -2,13 +2,11 @@
 using namespace __gnu_pbds;
 template<class T> using OrderedSet = tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update>;
 
-// Time complexity O(log n)
-// Space complexity O(n)
 template <class T>
 struct OrderedMultiset {
   OrderedSet<pair<T, int>> ordered_set;
   map<T, int> mp;
-
+  
   void insert(T x) {
     ordered_set.insert({x, ++mp[x]});
   }
@@ -24,8 +22,12 @@ struct OrderedMultiset {
   int count(T x) {
     return mp[x];
   }
-
+  
   int size() { return (int)ordered_set.size(); }
   bool empty() { return ordered_set.empty(); }
   void clear() { ordered_set.clear(); mp.clear()}
 };
+
+// OrderedMultiset
+// Time complexity O(log n)
+// Space complexity O(n)

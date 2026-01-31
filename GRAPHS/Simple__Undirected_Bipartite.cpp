@@ -1,11 +1,7 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 int n;
 vector<vector<int>> g;
 vector<int> mt, vis;
 int timer = 0;
-
 bool Khun(int u){
     if (vis[u] == timer) return false;
     vis[u] = timer;
@@ -17,18 +13,16 @@ bool Khun(int u){
     }
     return false;
 }
-
-// Time complexity O(n * m)
-// Space complexity O(n)
 int MaxMatching(){
     int res = 0;
     fill(mt.begin(), mt.end(), -1);
-    for (int u = 0; u < n; ++u){
+    for (int i = 0; i < n; ++i){
         ++timer;
-        Khun(u);
-    }
-    for (int u = 0; u < n; ++u){
-        if (mt[u] != 1) ++res;
+        if (Khun(i)) ++res;
     }
     return res;
 }
+
+// Khun
+// Time complexity O(n * m)
+// Space complexity O(n)

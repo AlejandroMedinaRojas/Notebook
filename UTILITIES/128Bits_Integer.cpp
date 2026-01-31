@@ -1,10 +1,5 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-// Time complexity O(s)
-// Space complexity O(1)
 template<typename T>
-T StringToInt128(const string &s) {
+T StringToInt128(const string& s) {
     T number = 0;
     size_t i = 0;
     bool neg = false;
@@ -21,8 +16,6 @@ T StringToInt128(const string &s) {
     return number;
 }
 
-// Time complexity O(s)
-// Space complexity O(s)
 template<typename T>
 string Int128ToString(T number) {
     if (number == 0) return "0";
@@ -42,3 +35,11 @@ string Int128ToString(T number) {
     reverse(s.begin(), s.end());
     return s;
 }
+
+// StringToInt128
+// Time complexity O(s)
+// Space complexity O(1)
+
+// Int128ToString
+// Time complexity O(s)
+// Space complexity O(s)
